@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\FeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,7 @@ Route::get('/', function () {
 Route::get('/register' ,function (){
   return view('template.regform');
 });
+Route::get('fee/form',[FeeController::class , 'index']);
+Route::get('student/show',[StudentController::class , 'index']);
+Route::post('student/store',[StudentController::class , 'store']);
+
