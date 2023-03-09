@@ -17,6 +17,7 @@ class StudentController extends Controller
     {
         $student = Student::all();
         return view('template.studentlist',compact('student'));
+        // return $student;
     }
 
     /**

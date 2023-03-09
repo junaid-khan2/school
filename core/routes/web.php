@@ -23,7 +23,9 @@ Route::get('/', function () {
 Route::get('/register' ,function (){
   return view('template.regform');
 });
-Route::get('fee/form',[FeeController::class , 'index']);
+Route::get('/fee/form/{id}',[FeeController::class , 'free_from']);
+Route::get('fee/showlist',[FeeController::class , 'showlist']);
+Route::post('/ajax',[FeeController::class , 'ajax']);
 Route::get('student/show',[StudentController::class , 'index']);
 Route::post('student/store',[StudentController::class , 'store']);
 

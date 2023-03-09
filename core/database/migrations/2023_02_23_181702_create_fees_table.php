@@ -15,16 +15,17 @@ return new class extends Migration
     {
         Schema::create('fees', function (Blueprint $table) {
             $table->id();
-            $table->string('st_id');
+            $table->integer('st_id')->nullable();
             $table->string('month');
             $table->string('tuition_fee')->nullable();
             $table->string('fine')->nullable();
             $table->string('arrears')->nullable();
             $table->string('adm_prom')->nullable();
+            $table->string('old_remming')->nullable();
             $table->string('total');
             $table->string('recived');
             $table->string('reming')->default('0');
-            $table->string('date');
+            $table->string('date'); 
             $table->timestamps();
         });
     }
